@@ -59,8 +59,8 @@ class ViewController: UIViewController {
 
     func onTapTableExpampleButton() {
         let vc = TableViewExample()
-        self.navigationController?.pushViewController(vc, animated: true)
-//        self.presentViewController(vc, animated: true, completion: nil)
+//        self.navigationController?.pushViewController(vc, animated: true)
+        self.presentViewController(vc, animated: true, completion: nil)
     }
 
     func onTapCollectionExpampleButton() {

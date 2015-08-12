@@ -23,6 +23,8 @@
 		B04C9E9D1B7B377D002D55E7 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B04C9E9C1B7B377D002D55E7 /* Info.plist */; };
 		B04C9E9F1B7B3838002D55E7 /* TableViewExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04C9E9E1B7B3838002D55E7 /* TableViewExample.swift */; };
 		B04C9EA11B7B3992002D55E7 /* CollectionViewExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04C9EA01B7B3992002D55E7 /* CollectionViewExample.swift */; };
+		B04C9EA31B7B4D19002D55E7 /* SampleTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04C9EA21B7B4D19002D55E7 /* SampleTableView.swift */; };
+		B04C9EA51B7B50EB002D55E7 /* SampleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04C9EA41B7B50EB002D55E7 /* SampleCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		B04C9E9C1B7B377D002D55E7 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B04C9E9E1B7B3838002D55E7 /* TableViewExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewExample.swift; sourceTree = "<group>"; };
 		B04C9EA01B7B3992002D55E7 /* CollectionViewExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewExample.swift; sourceTree = "<group>"; };
+		B04C9EA21B7B4D19002D55E7 /* SampleTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleTableView.swift; sourceTree = "<group>"; };
+		B04C9EA41B7B50EB002D55E7 /* SampleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,8 +151,10 @@
 				B04C9E8D1B7B369B002D55E7 /* AppDelegate.swift */,
 				B04C9E8E1B7B369B002D55E7 /* ViewController.swift */,
 				B04C9E8B1B7B3672002D55E7 /* ScrollViewExample.swift */,
-				B04C9E9E1B7B3838002D55E7 /* TableViewExample.swift */,
 				B04C9EA01B7B3992002D55E7 /* CollectionViewExample.swift */,
+				B04C9E9E1B7B3838002D55E7 /* TableViewExample.swift */,
+				B04C9EA21B7B4D19002D55E7 /* SampleTableView.swift */,
+				B04C9EA41B7B50EB002D55E7 /* SampleCell.swift */,
 				B04C9E911B7B3761002D55E7 /* Base.lproj */,
 				B04C9E961B7B3761002D55E7 /* Images.xcassets */,
 			);
@@ -266,9 +272,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				B04C9E8F1B7B369B002D55E7 /* AppDelegate.swift in Sources */,
+				B04C9EA31B7B4D19002D55E7 /* SampleTableView.swift in Sources */,
 				B04C9E8C1B7B3672002D55E7 /* ScrollViewExample.swift in Sources */,
 				B04C9E841B7B3669002D55E7 /* BallView.swift in Sources */,
 				B04C9E901B7B369B002D55E7 /* ViewController.swift in Sources */,
+				B04C9EA51B7B50EB002D55E7 /* SampleCell.swift in Sources */,
 				B04C9E9F1B7B3838002D55E7 /* TableViewExample.swift in Sources */,
 				B04C9E871B7B3669002D55E7 /* NSTimerEx.swift in Sources */,
 				B04C9E861B7B3669002D55E7 /* CGRectEx.swift in Sources */,
@@ -473,6 +481,7 @@
 				B04C9E791B7B35FD002D55E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B04C9E7A1B7B35FD002D55E7 /* Build configuration list for PBXNativeTarget "PullToBounceTests" */ = {
 			isa = XCConfigurationList;
@@ -481,6 +490,7 @@
 				B04C9E7C1B7B35FD002D55E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
