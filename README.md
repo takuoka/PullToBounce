@@ -21,8 +21,6 @@ Inspired by https://dribbble.com/shots/1797373-Pull-Down-To-Refresh
 
 # Installation
 
-Now, This is processing.
-
 ```
 pod 'PullToBounce'
 ```
