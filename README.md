@@ -21,7 +21,7 @@ Inspired by https://dribbble.com/shots/1797373-Pull-Down-To-Refresh
 
 # Installation
 
-You can use this via CocoaPods.
+You can install this to your project via CocoaPods.
 
 ```
 pod 'PullToBounce'
