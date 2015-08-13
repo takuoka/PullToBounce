@@ -16,13 +16,12 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "PullToBounce"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "Animated \"Pull To Refresh\" Library for UIScrollView. Inspired by https://dribbble.com/shots/1797373-Pull-Down-To-Refresh"
 
 
   s.homepage     = "https://github.com/entotsu/PullToBounce"
-  # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
-
+  s.screenshots  = "https://raw.githubusercontent.com/entotsu/PullToBounce/master/demo.gif"
 
   # ―――  Spec License  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
@@ -57,7 +56,7 @@ Pod::Spec.new do |s|
   #
 
   # s.platform     = :ios
-  # s.platform     = :ios, "5.0"
+  s.platform     = :ios, "8.0"
 
   #  When using multiple platforms
   # s.ios.deployment_target = "5.0"
