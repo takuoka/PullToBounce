@@ -30,7 +30,6 @@ pod 'PullToBounce'
 
 ## Please Wrap your scroll view
 
-
 ``` swift
 // Please wrap your scroll view
 let tableViewWrapper = PullToBounceWrapper(scrollView: tableView)
@@ -39,6 +38,7 @@ let tableViewWrapper = PullToBounceWrapper(scrollView: tableView)
 bodyView.addSubview(tableViewWrapper)
 ```
 The color will be same as your scrollView's background color.
+
 
 ## Event Handler
 
@@ -50,6 +50,8 @@ tableViewWrapper.didPullToRefresh = {
 }
 ```
 
+
+
 # Custom Animation
 
 #### Default arguments of "init" of PullToBounceWrapper
@@ -60,8 +62,8 @@ init(
   scrollView: UIScrollView, // this is the only required argument
   bounceDuration: CFTimeInterval = 0.8,
   ballSize:CGFloat = 36,
-  ballMoveTimingFunc:CAMediaTimingFunction = CAMediaTimingFunction(controlPoints:0.49,0.13,0.29,1.61),
-  moveUpDuration:CFTimeInterval = 0.25,
+  ballMoveTimingFunc: CAMediaTimingFunction = CAMediaTimingFunction(controlPoints:0.49,0.13,0.29,1.61),
+  moveUpDuration: CFTimeInterval = 0.25,
   pullDistance: CGFloat = 96,
   bendDistance: CGFloat = 40,
   didPullToRefresh: (()->())? = nil
