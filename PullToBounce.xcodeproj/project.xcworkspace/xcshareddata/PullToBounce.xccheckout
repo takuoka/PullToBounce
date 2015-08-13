@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>2668793B-70E3-4CEA-B553-212A56410CF0</string>
+	<key>IDESourceControlProjectName</key>
+	<string>project</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>C6CE8D057338E2FBC4967CA80F2501CD8F7530F4</key>
+		<string>https://github.com/entotsu/PullToBounce.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>PullToBounce.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>C6CE8D057338E2FBC4967CA80F2501CD8F7530F4</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/entotsu/PullToBounce.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>C6CE8D057338E2FBC4967CA80F2501CD8F7530F4</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>C6CE8D057338E2FBC4967CA80F2501CD8F7530F4</string>
+			<key>IDESourceControlWCCName</key>
+			<string>PullToBounce</string>
+		</dict>
+	</array>
+</dict>
+</plist>

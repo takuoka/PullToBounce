@@ -10,9 +10,6 @@
 		B04C9E741B7B35FD002D55E7 /* PullToBounceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04C9E731B7B35FD002D55E7 /* PullToBounceTests.swift */; };
 		B04C9E841B7B3669002D55E7 /* BallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04C9E7E1B7B3669002D55E7 /* BallView.swift */; };
 		B04C9E851B7B3669002D55E7 /* BounceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04C9E7F1B7B3669002D55E7 /* BounceView.swift */; };
-		B04C9E861B7B3669002D55E7 /* CGRectEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04C9E801B7B3669002D55E7 /* CGRectEx.swift */; };
-		B04C9E871B7B3669002D55E7 /* NSTimerEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04C9E811B7B3669002D55E7 /* NSTimerEx.swift */; };
-		B04C9E881B7B3669002D55E7 /* PullToBounceScrollViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04C9E821B7B3669002D55E7 /* PullToBounceScrollViewWrapper.swift */; };
 		B04C9E891B7B3669002D55E7 /* WaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04C9E831B7B3669002D55E7 /* WaveView.swift */; };
 		B04C9E8F1B7B369B002D55E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04C9E8D1B7B369B002D55E7 /* AppDelegate.swift */; };
 		B04C9E981B7B3761002D55E7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B04C9E921B7B3761002D55E7 /* LaunchScreen.xib */; };
@@ -23,6 +20,9 @@
 		B04C9EA31B7B4D19002D55E7 /* SampleTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04C9EA21B7B4D19002D55E7 /* SampleTableView.swift */; };
 		B04C9EA51B7B50EB002D55E7 /* SampleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04C9EA41B7B50EB002D55E7 /* SampleCell.swift */; };
 		B0DE06471B7C23590087EE7F /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DE06461B7C23590087EE7F /* Colors.swift */; };
+		B0DE064B1B7C51190087EE7F /* CGRectEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DE06491B7C51190087EE7F /* CGRectEx.swift */; };
+		B0DE064C1B7C51190087EE7F /* NSTimerEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DE064A1B7C51190087EE7F /* NSTimerEx.swift */; };
+		B0DE064E1B7C511F0087EE7F /* PullToBounceWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DE064D1B7C511F0087EE7F /* PullToBounceWrapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,9 +42,6 @@
 		B04C9E731B7B35FD002D55E7 /* PullToBounceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullToBounceTests.swift; sourceTree = "<group>"; };
 		B04C9E7E1B7B3669002D55E7 /* BallView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BallView.swift; sourceTree = "<group>"; };
 		B04C9E7F1B7B3669002D55E7 /* BounceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BounceView.swift; sourceTree = "<group>"; };
-		B04C9E801B7B3669002D55E7 /* CGRectEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRectEx.swift; sourceTree = "<group>"; };
-		B04C9E811B7B3669002D55E7 /* NSTimerEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSTimerEx.swift; sourceTree = "<group>"; };
-		B04C9E821B7B3669002D55E7 /* PullToBounceScrollViewWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullToBounceScrollViewWrapper.swift; sourceTree = "<group>"; };
 		B04C9E831B7B3669002D55E7 /* WaveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaveView.swift; sourceTree = "<group>"; };
 		B04C9E8D1B7B369B002D55E7 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B04C9E931B7B3761002D55E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = LaunchScreen.xib; sourceTree = "<group>"; };
@@ -55,6 +52,9 @@
 		B04C9EA21B7B4D19002D55E7 /* SampleTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleTableView.swift; sourceTree = "<group>"; };
 		B04C9EA41B7B50EB002D55E7 /* SampleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleCell.swift; sourceTree = "<group>"; };
 		B0DE06461B7C23590087EE7F /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		B0DE06491B7C51190087EE7F /* CGRectEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRectEx.swift; sourceTree = "<group>"; };
+		B0DE064A1B7C51190087EE7F /* NSTimerEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSTimerEx.swift; sourceTree = "<group>"; };
+		B0DE064D1B7C511F0087EE7F /* PullToBounceWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullToBounceWrapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,12 +131,11 @@
 		B04C9E7D1B7B3669002D55E7 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				B04C9E821B7B3669002D55E7 /* PullToBounceScrollViewWrapper.swift */,
+				B0DE06481B7C51190087EE7F /* helper */,
+				B0DE064D1B7C511F0087EE7F /* PullToBounceWrapper.swift */,
 				B04C9E7F1B7B3669002D55E7 /* BounceView.swift */,
 				B04C9E7E1B7B3669002D55E7 /* BallView.swift */,
 				B04C9E831B7B3669002D55E7 /* WaveView.swift */,
-				B04C9E801B7B3669002D55E7 /* CGRectEx.swift */,
-				B04C9E811B7B3669002D55E7 /* NSTimerEx.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -162,6 +161,15 @@
 				B04C9E941B7B3761002D55E7 /* Main.storyboard */,
 			);
 			path = Base.lproj;
+			sourceTree = "<group>";
+		};
+		B0DE06481B7C51190087EE7F /* helper */ = {
+			isa = PBXGroup;
+			children = (
+				B0DE06491B7C51190087EE7F /* CGRectEx.swift */,
+				B0DE064A1B7C51190087EE7F /* NSTimerEx.swift */,
+			);
+			path = helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,14 +275,14 @@
 			files = (
 				B04C9E8F1B7B369B002D55E7 /* AppDelegate.swift in Sources */,
 				B04C9EA31B7B4D19002D55E7 /* SampleTableView.swift in Sources */,
+				B0DE064C1B7C51190087EE7F /* NSTimerEx.swift in Sources */,
+				B0DE064E1B7C511F0087EE7F /* PullToBounceWrapper.swift in Sources */,
 				B0DE06471B7C23590087EE7F /* Colors.swift in Sources */,
 				B04C9E841B7B3669002D55E7 /* BallView.swift in Sources */,
 				B04C9EA51B7B50EB002D55E7 /* SampleCell.swift in Sources */,
 				B04C9E9F1B7B3838002D55E7 /* TableViewExample.swift in Sources */,
-				B04C9E871B7B3669002D55E7 /* NSTimerEx.swift in Sources */,
-				B04C9E861B7B3669002D55E7 /* CGRectEx.swift in Sources */,
 				B04C9E851B7B3669002D55E7 /* BounceView.swift in Sources */,
-				B04C9E881B7B3669002D55E7 /* PullToBounceScrollViewWrapper.swift in Sources */,
+				B0DE064B1B7C51190087EE7F /* CGRectEx.swift in Sources */,
 				B04C9E891B7B3669002D55E7 /* WaveView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
