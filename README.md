@@ -11,7 +11,7 @@
 
 Animated "Pull To Refresh" Library for UIScrollView.
 
-You can append "pull to refresh" animation to your UIScrollView, UITableView and UICollectionView.
+You can add animated "pull to refresh" action to your UIScrollView, UITableView and UICollectionView.
 
 Inspired by https://dribbble.com/shots/1797373-Pull-Down-To-Refresh
 
