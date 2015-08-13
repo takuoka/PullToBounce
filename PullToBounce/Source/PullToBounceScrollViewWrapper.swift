@@ -6,6 +6,8 @@
 //  Copyright (c) 2015年 Uniface. All rights reserved.
 //
 
+// Inspired by https://dribbble.com/shots/1797373-Pull-Down-To-Refresh
+
 import UIKit
 
 
