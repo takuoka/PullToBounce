@@ -9,7 +9,7 @@
 [![CocoaPods](https://img.shields.io/cocoapods/v/PullToBounce.svg)]()
 
 
-Pull To Refresh Animation Library for UIScrollView.
+Animated "Pull To Refresh" Library for UIScrollView.
 
 You can append "pull to refresh" animation to your UIScrollView, UITableView and UICollectionView.
 
