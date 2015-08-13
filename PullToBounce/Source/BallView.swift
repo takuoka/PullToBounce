@@ -78,7 +78,7 @@ class CircleLayer :CAShapeLayer {
         self.path = UIBezierPath(arcCenter: center, radius: radius, startAngle: CGFloat(startAngle), endAngle: CGFloat(endAngle), clockwise: clockwise).CGPath
         self.fillColor = color.colorWithAlphaComponent(1).CGColor
         self.strokeColor = self.fillColor
-        self.lineWidth = 1
+        self.lineWidth = 0
         self.strokeEnd = 1
     }
     
@@ -139,7 +139,7 @@ class SpinerLayer :CAShapeLayer {
     init(superLayerFrame:CGRect, ballSize:CGFloat, color:UIColor = UIColor.whiteColor()) {
         super.init()
         
-        let radius:CGFloat = (ballSize / 2) * 1.25//1.45
+        let radius:CGFloat = (ballSize / 2) * 1.2//1.45
         self.frame = CGRectMake(0, 0, superLayerFrame.height, superLayerFrame.height)
         var center = CGPointMake(superLayerFrame.size.width / 2, superLayerFrame.origin.y + superLayerFrame.size.height/2)
         let startAngle = 0 - M_PI_2
@@ -148,7 +148,7 @@ class SpinerLayer :CAShapeLayer {
         self.path = UIBezierPath(arcCenter: center, radius: radius, startAngle: CGFloat(startAngle), endAngle: CGFloat(endAngle), clockwise: clockwise).CGPath
         
         self.fillColor = nil
-        self.strokeColor = color.colorWithAlphaComponent(0.8).CGColor
+        self.strokeColor = color.colorWithAlphaComponent(1).CGColor
         self.lineWidth = 2
         self.lineCap = kCALineCapRound
         

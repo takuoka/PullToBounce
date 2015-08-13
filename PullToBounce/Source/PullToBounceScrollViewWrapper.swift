@@ -9,7 +9,7 @@
 import UIKit
 
 
-class PullToBounceScrollViewWrapper: UIView {
+class PullToBounceWrapper: UIView {
 
     var pullDist: CGFloat = 80
     var bendDist: CGFloat = 40
@@ -18,20 +18,26 @@ class PullToBounceScrollViewWrapper: UIView {
             return pullDist + bendDist
         }
     }
-    
+
     var didPullToRefresh: (()->())?
     
     var bounceView: BounceView!
     var scrollView: UIScrollView?
-    
+
+    /**
+    Please addSubView this insted of your scrollView.
+    The only required parameter is scrollView.
+    And you can customize animation by other parameters.
+    */
     init(
         scrollView: UIScrollView,
         bounceDuration: CFTimeInterval = 0.8,
-        ballSize:CGFloat = 28,//32,
+        ballSize:CGFloat = 36,//32,
         ballMoveTimingFunc:CAMediaTimingFunction = CAMediaTimingFunction(controlPoints:0.49,0.13,0.29,1.61),
         moveUpDuration:CFTimeInterval = 0.25,
-        pullDist: CGFloat = 80,
-        bendDist: CGFloat = 40
+        pullDist: CGFloat = 96,
+        bendDist: CGFloat = 40,
+        didPullToRefresh: (()->())? = nil
         )
     {
         if scrollView.frame == CGRectZero {
@@ -41,7 +47,8 @@ class PullToBounceScrollViewWrapper: UIView {
 
         self.pullDist = pullDist
         self.bendDist = bendDist
-
+        self.didPullToRefresh = didPullToRefresh
+        
         let moveUpDist = pullDist/2 + ballSize/2
         
         bounceView = BounceView(

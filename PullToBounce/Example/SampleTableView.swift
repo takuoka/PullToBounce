@@ -15,7 +15,6 @@ class SampleTableView: UITableView, UITableViewDelegate, UITableViewDataSource {
         self.delegate = self
         self.dataSource = self
         self.registerClass(SampleCell.self, forCellReuseIdentifier: "SampleCell")
-        
         self.separatorStyle = UITableViewCellSeparatorStyle.None
     }
     
@@ -23,7 +22,6 @@ class SampleTableView: UITableView, UITableViewDelegate, UITableViewDataSource {
         fatalError("init(coder:) has not been implemented")
     }
     
-
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int  {
         return 30
     }
@@ -33,8 +31,7 @@ class SampleTableView: UITableView, UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath!) -> CGFloat {
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 92
     }
-
 }

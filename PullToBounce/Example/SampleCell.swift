@@ -10,7 +10,7 @@ import UIKit
 
 class SampleCell: UITableViewCell {
     
-    let color = UIColor(red:0.752941, green: 0.768627, blue: 0.839216, alpha: 1)//UIColor.grayColor().colorWithAlphaComponent(0.5)
+    let color = UIColor.lightBlue
 
     override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -27,7 +27,6 @@ class SampleCell: UITableViewCell {
         let line1 = CGRect(x: lineLeft, y: 12 + lineMargin, width: 100, height: 6)
         let line2 = CGRect(x: lineLeft, y: line1.bottom + lineMargin, width: 160, height: 5)
         let line3 = CGRect(x: lineLeft, y: line2.bottom + lineMargin, width: 180, height: 5)
-        
         addLine(line1)
         addLine(line2)
         addLine(line3)
