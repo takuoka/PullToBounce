@@ -19,13 +19,14 @@ class TableViewExample: UIViewController {
         self.view.addSubview(bodyView)
         
         let tableView = SampleTableView(frame: self.view.frame, style: UITableViewStyle.Plain)
-        //🌟 Usage
-        let wrapper = PullToBounceWrapper(scrollView: tableView)
-        bodyView.addSubview(wrapper)
 
-        wrapper.didPullToRefresh = {
+        //🌟 Usage
+        let tableViewWrapper = PullToBounceWrapper(scrollView: tableView)
+        bodyView.addSubview(tableViewWrapper)
+
+        tableViewWrapper.didPullToRefresh = {
             NSTimer.schedule(delay: 3) { timer in
-                wrapper.stopLoadingAnimation()
+                tableViewWrapper.stopLoadingAnimation()
             }
         }
 

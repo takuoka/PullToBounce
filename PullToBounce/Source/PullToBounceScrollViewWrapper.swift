@@ -9,7 +9,7 @@
 import UIKit
 
 
-class PullToBounceWrapper: UIView {
+public class PullToBounceWrapper: UIView {
 
     var pullDist: CGFloat = 80
     var bendDist: CGFloat = 40
@@ -19,17 +19,17 @@ class PullToBounceWrapper: UIView {
         }
     }
 
-    var didPullToRefresh: (()->())?
+    public var didPullToRefresh: (()->())?
     
     var bounceView: BounceView!
-    var scrollView: UIScrollView?
+    public var scrollView: UIScrollView?
 
     /**
     Please addSubView this insted of your scrollView.
     The only required parameter is scrollView.
     And you can customize animation by other parameters.
     */
-    init(
+    public init(
         scrollView: UIScrollView,
         bounceDuration: CFTimeInterval = 0.8,
         ballSize:CGFloat = 36,//32,
@@ -69,7 +69,7 @@ class PullToBounceWrapper: UIView {
         scrollView.addObserver(self, forKeyPath: contentOffsetKeyPath, options: .Initial, context: &KVOContext)
     }
     
-    required init(coder aDecoder: NSCoder) {
+    public required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
@@ -104,7 +104,7 @@ class PullToBounceWrapper: UIView {
         }
     }
     
-    func stopLoadingAnimation() {
+    public func stopLoadingAnimation() {
         bounceView.endingAnimation {
             self.scrollView?.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
             self.scrollView?.scrollEnabled = true
@@ -114,7 +114,7 @@ class PullToBounceWrapper: UIView {
     // MARK: ScrollView KVO
     private var KVOContext = "PullToRefreshKVOContext"
     private let contentOffsetKeyPath = "contentOffset"
-    override func observeValueForKeyPath(keyPath: String, ofObject object: AnyObject, change: [NSObject : AnyObject], context: UnsafeMutablePointer<()>) {
+    public override func observeValueForKeyPath(keyPath: String, ofObject object: AnyObject, change: [NSObject : AnyObject], context: UnsafeMutablePointer<()>) {
         if (context == &KVOContext && keyPath == contentOffsetKeyPath && object as? UIScrollView == scrollView) {
             scrollViewDidScroll()
         }
