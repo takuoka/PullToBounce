@@ -25,12 +25,10 @@ class SampleTableView: UITableView, UITableViewDelegate, UITableViewDataSource {
     
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int  {
-        print("row")
         return 30
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath:NSIndexPath) -> UITableViewCell {
-        print("cell")
         let cell = tableView.dequeueReusableCellWithIdentifier("SampleCell", forIndexPath: indexPath) as! SampleCell
         return cell
     }

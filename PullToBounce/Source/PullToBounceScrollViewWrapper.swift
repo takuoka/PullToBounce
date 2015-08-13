@@ -11,10 +11,11 @@ import UIKit
 
 class PullToBounceScrollViewWrapper: UIView {
 
-    let pullDist: CGFloat = 80
+    var pullDist: CGFloat = 80
+    var bendDist: CGFloat = 40
     var stopPos:CGFloat {
         get {
-            return pullDist + 40
+            return pullDist + bendDist
         }
     }
     
@@ -29,7 +30,8 @@ class PullToBounceScrollViewWrapper: UIView {
         ballSize:CGFloat = 28,//32,
         ballMoveTimingFunc:CAMediaTimingFunction = CAMediaTimingFunction(controlPoints:0.49,0.13,0.29,1.61),
         moveUpDuration:CFTimeInterval = 0.25,
-        moveUpDist: CGFloat =  32 * 1.5
+        pullDist: CGFloat = 80,
+        bendDist: CGFloat = 40
         )
     {
         if scrollView.frame == CGRectZero {
@@ -37,6 +39,11 @@ class PullToBounceScrollViewWrapper: UIView {
         }
         super.init(frame: scrollView.frame)
 
+        self.pullDist = pullDist
+        self.bendDist = bendDist
+
+        let moveUpDist = pullDist/2 + ballSize/2
+        
         bounceView = BounceView(
             frame: scrollView.frame
             , color: scrollView.backgroundColor
