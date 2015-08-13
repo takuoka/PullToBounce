@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>2668793B-70E3-4CEA-B553-212A56410CF0</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>PullToBounce</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>C6CE8D057338E2FBC4967CA80F2501CD8F7530F4</key>
 		<string>https://github.com/entotsu/PullToBounce.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>PullToBounce.xcodeproj/project.xcworkspace</string>
+	<string>PullToBounce.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>C6CE8D057338E2FBC4967CA80F2501CD8F7530F4</key>
