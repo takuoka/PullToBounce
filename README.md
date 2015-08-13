@@ -18,6 +18,7 @@ Inspired by https://dribbble.com/shots/1797373-Pull-Down-To-Refresh
 # ScreenShot
 ![Demo GIF Animation](https://raw.githubusercontent.com/entotsu/PullToBounce/master/demo.gif "Demo GIF Animation")
 
+You can play demo at [appetize.io](https://appetize.io/app/hbj0vawpk8uw9z00838vz5he4g).
 
 # Installation
 
