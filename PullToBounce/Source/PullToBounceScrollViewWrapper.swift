@@ -34,11 +34,11 @@ public class PullToBounceWrapper: UIView {
     public init(
         scrollView: UIScrollView,
         bounceDuration: CFTimeInterval = 0.8,
-        ballSize:CGFloat = 36,//32,
+        ballSize:CGFloat = 36,
         ballMoveTimingFunc:CAMediaTimingFunction = CAMediaTimingFunction(controlPoints:0.49,0.13,0.29,1.61),
         moveUpDuration:CFTimeInterval = 0.25,
-        pullDist: CGFloat = 96,
-        bendDist: CGFloat = 40,
+        pullDistance: CGFloat = 96,
+        bendDistance: CGFloat = 40,
         didPullToRefresh: (()->())? = nil
         )
     {
@@ -47,8 +47,8 @@ public class PullToBounceWrapper: UIView {
         }
         super.init(frame: scrollView.frame)
 
-        self.pullDist = pullDist
-        self.bendDist = bendDist
+        self.pullDist = pullDistance
+        self.bendDist = bendDistance
         self.didPullToRefresh = didPullToRefresh
         
         let moveUpDist = pullDist/2 + ballSize/2
