@@ -47,7 +47,7 @@ The color will be same as your scrollView's background color.
 
 ``` swift
 tableViewWrapper.didPullToRefresh = {
-    yourLoading() {
+    didFinishYourLoading() {
         tableViewWrapper.stopLoadingAnimation()
     }
 }
