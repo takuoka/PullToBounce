@@ -35,12 +35,14 @@ pod 'PullToBounce'
 
 ``` swift
 // Please wrap your scroll view
+tableView.frame = yourFrame
 let tableViewWrapper = PullToBounceWrapper(scrollView: tableView)
 
 // Please add wrapper view to your view instead of your scroll view.
 bodyView.addSubview(tableViewWrapper)
 ```
-The color will be same as your scrollView's background color.
+The frame of wrapper will be same as your scrollView.
+And the color will be same as your scrollView's background color.
 
 
 ## Event Handler
