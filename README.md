@@ -42,6 +42,7 @@ let tableViewWrapper = PullToBounceWrapper(scrollView: tableView)
 bodyView.addSubview(tableViewWrapper)
 ```
 The frame of wrapper will be same as your scrollView.
+
 And the color will be same as your scrollView's background color.
 
 
