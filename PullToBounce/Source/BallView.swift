@@ -40,7 +40,7 @@ class BallView: UIView {
         circleMoveView.layer.addSublayer(circleLayer)
     }
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
@@ -48,7 +48,7 @@ class BallView: UIView {
         circleLayer.startAnimation()
     }
     func endAnimation(complition:(()->())? = nil) {
-        circleLayer.endAnimation(complition: complition)
+        circleLayer.endAnimation(complition)
     }
 }
 
@@ -71,7 +71,7 @@ class CircleLayer :CAShapeLayer {
         
         let radius:CGFloat = size / 2
         self.frame = selfFrame
-        var center = CGPointMake(superViewFrame.size.width / 2, superViewFrame.size.height/2)
+        let center = CGPointMake(superViewFrame.size.width / 2, superViewFrame.size.height/2)
         let startAngle = 0 - M_PI_2
         let endAngle = M_PI * 2 - M_PI_2
         let clockwise: Bool = true
@@ -82,7 +82,7 @@ class CircleLayer :CAShapeLayer {
         self.strokeEnd = 1
     }
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
@@ -128,7 +128,7 @@ class CircleLayer :CAShapeLayer {
         self.addAnimation(move, forKey: move.keyPath)
     }
     
-    override func animationDidStop(anim: CAAnimation!, finished flag: Bool) {
+    override func animationDidStop(anim: CAAnimation, finished flag: Bool) {
         didEndAnimation?()
     }
 }
@@ -141,7 +141,7 @@ class SpinerLayer :CAShapeLayer {
         
         let radius:CGFloat = (ballSize / 2) * 1.2//1.45
         self.frame = CGRectMake(0, 0, superLayerFrame.height, superLayerFrame.height)
-        var center = CGPointMake(superLayerFrame.size.width / 2, superLayerFrame.origin.y + superLayerFrame.size.height/2)
+        let center = CGPointMake(superLayerFrame.size.width / 2, superLayerFrame.origin.y + superLayerFrame.size.height/2)
         let startAngle = 0 - M_PI_2
         let endAngle = (M_PI * 2 - M_PI_2) + M_PI / 8
         let clockwise: Bool = true
@@ -158,7 +158,7 @@ class SpinerLayer :CAShapeLayer {
         
     }
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
@@ -203,7 +203,7 @@ class SpinerLayer :CAShapeLayer {
         self.addAnimation(startPoint, forKey: startPoint.keyPath)
     }
 
-    override func animationDidStop(anim: CAAnimation!, finished flag: Bool) {
+    override func animationDidStop(anim: CAAnimation, finished flag: Bool) {
         if self.hidden == false {
             let a:CABasicAnimation = anim as! CABasicAnimation
             if a.keyPath == "strokeStart" {

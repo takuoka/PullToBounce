@@ -26,7 +26,7 @@ class WaveView: UIView, UIGestureRecognizerDelegate {
         self.layer.addSublayer(waveLayer)
     }
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
@@ -34,16 +34,16 @@ class WaveView: UIView, UIGestureRecognizerDelegate {
         self.waveLayer.path = self.wavePath(amountX: 0, amountY: y)
     }
     
-    func didRelease(#amountX: CGFloat,amountY: CGFloat) {
+    func didRelease(amountX amountX: CGFloat,amountY: CGFloat) {
         self.boundAnimation(positionX: amountX, positionY: amountY)
         didEndPull?()
     }
     
-    func boundAnimation(#positionX: CGFloat,positionY: CGFloat) {
+    func boundAnimation(positionX positionX: CGFloat,positionY: CGFloat) {
         self.waveLayer.path = self.wavePath(amountX: 0, amountY: 0)
-        var bounce = CAKeyframeAnimation(keyPath: "path")
+        let bounce = CAKeyframeAnimation(keyPath: "path")
         bounce.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn)
-        var values = [
+        let values = [
             self.wavePath(amountX: positionX, amountY: positionY),
             self.wavePath(amountX: -(positionX * 0.7), amountY: -(positionY * 0.7)),
             self.wavePath(amountX: positionX * 0.4, amountY: positionY * 0.4),
@@ -59,19 +59,19 @@ class WaveView: UIView, UIGestureRecognizerDelegate {
         self.waveLayer.addAnimation(bounce, forKey: "return")
     }
     
-    func wavePath(#amountX:CGFloat, amountY:CGFloat) -> CGPathRef {
+    func wavePath(amountX amountX:CGFloat, amountY:CGFloat) -> CGPathRef {
         let w = self.frame.width
         let h = self.frame.height
         let centerY:CGFloat = 0
         let bottomY = h
         
-        var topLeftPoint = CGPointMake(0, centerY)
-        var topMidPoint = CGPointMake(w / 2 + amountX, centerY + amountY)
-        var topRightPoint = CGPointMake(w, centerY)
+        let topLeftPoint = CGPointMake(0, centerY)
+        let topMidPoint = CGPointMake(w / 2 + amountX, centerY + amountY)
+        let topRightPoint = CGPointMake(w, centerY)
         let bottomLeftPoint = CGPointMake(0, bottomY)
         let bottomRightPoint = CGPointMake(w, bottomY)
         
-        var bezierPath = UIBezierPath()
+        let bezierPath = UIBezierPath()
         bezierPath.moveToPoint(bottomLeftPoint)
         bezierPath.addLineToPoint(topLeftPoint)
         bezierPath.addQuadCurveToPoint(topRightPoint, controlPoint: topMidPoint)
@@ -79,7 +79,7 @@ class WaveView: UIView, UIGestureRecognizerDelegate {
         return bezierPath.CGPath
     }
     
-    override func animationDidStop(anim: CAAnimation!, finished flag: Bool) {
+    override func animationDidStop(anim: CAAnimation, finished flag: Bool) {
         waveLayer.path = wavePath(amountX: 0.0, amountY: 0.0)
     }
 }
