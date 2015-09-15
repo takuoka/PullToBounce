@@ -15,6 +15,8 @@ You can add animated "pull to refresh" action to your UIScrollView, UITableView 
 
 Inspired by https://dribbble.com/shots/1797373-Pull-Down-To-Refresh
 
+[Objective-C version is here.](https://github.com/luckymore0520/LMPullToBounce)
+
 # ScreenShot
 ![Demo GIF Animation](https://raw.githubusercontent.com/entotsu/PullToBounce/master/demo.gif "Demo GIF Animation")
 
