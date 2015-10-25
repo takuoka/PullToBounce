@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "PullToBounce"
-  s.version      = "0.0.2"
+  s.version      = "0.0.3"
   s.summary      = "Animated \"Pull To Refresh\" Library for UIScrollView. Inspired by https://dribbble.com/shots/1797373-Pull-Down-To-Refresh"
 
 
