@@ -20,48 +20,49 @@ class BounceView: UIView {
         ballMoveTimingFunc:CAMediaTimingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut),
         moveUpDuration:CFTimeInterval = 0.2,
         moveUpDist: CGFloat = 32 * 1.5,
-        var color: UIColor! = UIColor.whiteColor()
+        color: UIColor! = UIColor.white
         )
     {
+        var color = color
         if color == nil {
-            color = UIColor.whiteColor()
+            color = UIColor.white
         }
         
         let ballViewHeight: CGFloat = 100
         
         ballView = BallView(
-            frame: CGRectMake(0, -(ballViewHeight + 1), frame.width, ballViewHeight),
+            frame: CGRect(x: 0, y: -(ballViewHeight + 1), width: frame.width, height: ballViewHeight),
             circleSize: ballSize,
             timingFunc: ballMoveTimingFunc,
             moveUpDuration: moveUpDuration,
             moveUpDist: moveUpDist,
-            color: color
+            color: color!
         )
         
         waveView = WaveView(
-            frame:CGRectMake(0, 0, ballView.frame.width, frame.height),
+            frame:CGRect(x: 0, y: 0, width: ballView.frame.width, height: frame.height),
             bounceDuration: bounceDuration,
-            color: color
+            color: color!
         )
         
         super.init(frame: frame)
         
-        ballView.hidden = true
+        ballView.isHidden = true
         
         self.addSubview(ballView)
         self.addSubview(waveView)
         
         waveView.didEndPull = {
-            NSTimer.schedule(delay: 0.2) { timer in
-                self.ballView.hidden = false
+            Timer.schedule(delay: 0.2) { timer in
+                self.ballView.isHidden = false
                 self.ballView.startAnimation()
             }
         }
     }
     
-    func endingAnimation(complition:(()->())? = nil) {
+    func endingAnimation(_ complition:(()->())? = nil) {
         ballView.endAnimation {
-            self.ballView.hidden = true
+            self.ballView.isHidden = true
             complition?()
         }
     }
@@ -70,11 +71,11 @@ class BounceView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func wave(y: CGFloat) {
+    func wave(_ y: CGFloat) {
         waveView.wave(y)
     }
     
-    func didRelease(y: CGFloat) {
+    func didRelease(_ y: CGFloat) {
         waveView.didRelease(amountX: 0, amountY: y)
     }
 }

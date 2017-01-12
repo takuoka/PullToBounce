@@ -9,9 +9,22 @@
 // Inspired by https://dribbble.com/shots/1797373-Pull-Down-To-Refresh
 
 import UIKit
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
 
 
-public class PullToBounceWrapper: UIView {
+
+open class PullToBounceWrapper: UIView {
 
     var pullDist: CGFloat = 80
     var bendDist: CGFloat = 40
@@ -21,10 +34,10 @@ public class PullToBounceWrapper: UIView {
         }
     }
 
-    public var didPullToRefresh: (()->())?
+    open var didPullToRefresh: (()->())?
     
     var bounceView: BounceView!
-    public var scrollView: UIScrollView?
+    open var scrollView: UIScrollView?
 
     /**
     Please addSubView this insted of your scrollView.
@@ -42,7 +55,7 @@ public class PullToBounceWrapper: UIView {
         didPullToRefresh: (()->())? = nil
         )
     {
-        if scrollView.frame == CGRectZero {
+        if scrollView.frame == CGRect.zero {
             assert(false, "Wow, scrollView.frame is CGRectZero. Please set frame size.")
         }
         super.init(frame: scrollView.frame)
@@ -52,23 +65,23 @@ public class PullToBounceWrapper: UIView {
         self.didPullToRefresh = didPullToRefresh
         
         let moveUpDist = pullDist/2 + ballSize/2
-        
+			
         bounceView = BounceView(
             frame: scrollView.frame
+						, bounceDuration: bounceDuration
+						, ballSize: ballSize
+						, ballMoveTimingFunc: ballMoveTimingFunc
+						, moveUpDuration: moveUpDuration
+						, moveUpDist: moveUpDist
             , color: scrollView.backgroundColor
-            , moveUpDuration: moveUpDuration
-            , ballMoveTimingFunc: ballMoveTimingFunc
-            , bounceDuration: bounceDuration
-            , ballSize: ballSize
-            , moveUpDist: moveUpDist
         )
         self.addSubview(bounceView)
         
         self.scrollView = scrollView
 //        scrollView.frame = self.frame
-        scrollView.backgroundColor = UIColor.clearColor()
+        scrollView.backgroundColor = UIColor.clear
         self.addSubview(scrollView)
-        scrollView.addObserver(self, forKeyPath: contentOffsetKeyPath, options: .Initial, context: &KVOContext)
+        scrollView.addObserver(self, forKeyPath: contentOffsetKeyPath, options: .initial, context: &KVOContext)
     }
     
     public required init?(coder aDecoder: NSCoder) {
@@ -92,7 +105,7 @@ public class PullToBounceWrapper: UIView {
                 scrollView?.alpha = 0
             }
             else if y > stopPos {
-                scrollView?.scrollEnabled = false
+                scrollView?.isScrollEnabled = false
                 scrollView?.setContentOffset(CGPoint(x: scrollView!.contentOffset.x, y: -stopPos), animated: false)
                 bounceView.frame.y = pullDist
                 bounceView.wave(stopPos - pullDist)
@@ -106,22 +119,22 @@ public class PullToBounceWrapper: UIView {
         }
     }
     
-    public func stopLoadingAnimation() {
+    open func stopLoadingAnimation() {
         bounceView.endingAnimation {
             self.scrollView?.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
-            self.scrollView?.scrollEnabled = true
+            self.scrollView?.isScrollEnabled = true
         }
     }
     
     // MARK: ScrollView KVO
-    private var KVOContext = "PullToRefreshKVOContext"
-    private let contentOffsetKeyPath = "contentOffset"
-    public override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<()>) {
+    fileprivate var KVOContext = "PullToRefreshKVOContext"
+    fileprivate let contentOffsetKeyPath = "contentOffset"
+    open override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if (context == &KVOContext && keyPath == contentOffsetKeyPath && object as? UIScrollView == scrollView) {
             scrollViewDidScroll()
         }
         else {
-            super.observeValueForKeyPath(keyPath, ofObject: object, change: change, context: context)
+            super.observeValue(forKeyPath: keyPath, of: object, change: change, context: context)
         }
     }
 }

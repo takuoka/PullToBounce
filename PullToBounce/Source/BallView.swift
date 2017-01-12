@@ -20,15 +20,15 @@ class BallView: UIView {
         timingFunc:CAMediaTimingFunction = timeFunc,
         moveUpDuration:CFTimeInterval = upDuration,
         moveUpDist:CGFloat,
-        color:UIColor = UIColor.whiteColor())
+        color:UIColor = UIColor.white)
     {
         timeFunc = timingFunc
         upDuration = moveUpDuration
         super.init(frame:frame)
         
         let circleMoveView = UIView()
-        circleMoveView.frame = CGRectMake(0, 0, moveUpDist, moveUpDist)
-        circleMoveView.center = CGPointMake(frame.width/2, frame.height + circleSize / 2)
+        circleMoveView.frame = CGRect(x: 0, y: 0, width: moveUpDist, height: moveUpDist)
+        circleMoveView.center = CGPoint(x: frame.width/2, y: frame.height + circleSize / 2)
         self.addSubview(circleMoveView)
         
         circleLayer = CircleLayer(
@@ -47,7 +47,7 @@ class BallView: UIView {
     func startAnimation() {
         circleLayer.startAnimation()
     }
-    func endAnimation(complition:(()->())? = nil) {
+    func endAnimation(_ complition:(()->())? = nil) {
         circleLayer.endAnimation(complition)
     }
 }
@@ -55,15 +55,15 @@ class BallView: UIView {
 
 
 
-class CircleLayer :CAShapeLayer {
+class CircleLayer :CAShapeLayer, CAAnimationDelegate {
     
     let moveUpDist: CGFloat!
     let spiner: SpinerLayer!
     var didEndAnimation: (()->())?
     
-    init(size:CGFloat, moveUpDist:CGFloat , superViewFrame:CGRect, color:UIColor = UIColor.whiteColor()) {
+    init(size:CGFloat, moveUpDist:CGFloat , superViewFrame:CGRect, color:UIColor = UIColor.white) {
         self.moveUpDist = moveUpDist
-        let selfFrame = CGRectMake(0, 0, superViewFrame.size.width, superViewFrame.size.height)
+        let selfFrame = CGRect(x: 0, y: 0, width: superViewFrame.size.width, height: superViewFrame.size.height)
         self.spiner = SpinerLayer(superLayerFrame: selfFrame, ballSize: size, color: color)
         super.init()
         
@@ -71,12 +71,12 @@ class CircleLayer :CAShapeLayer {
         
         let radius:CGFloat = size / 2
         self.frame = selfFrame
-        let center = CGPointMake(superViewFrame.size.width / 2, superViewFrame.size.height/2)
+        let center = CGPoint(x: superViewFrame.size.width / 2, y: superViewFrame.size.height/2)
         let startAngle = 0 - M_PI_2
         let endAngle = M_PI * 2 - M_PI_2
         let clockwise: Bool = true
-        self.path = UIBezierPath(arcCenter: center, radius: radius, startAngle: CGFloat(startAngle), endAngle: CGFloat(endAngle), clockwise: clockwise).CGPath
-        self.fillColor = color.colorWithAlphaComponent(1).CGColor
+        self.path = UIBezierPath(arcCenter: center, radius: radius, startAngle: CGFloat(startAngle), endAngle: CGFloat(endAngle), clockwise: clockwise).cgPath
+        self.fillColor = color.withAlphaComponent(1).cgColor
         self.strokeColor = self.fillColor
         self.lineWidth = 0
         self.strokeEnd = 1
@@ -88,73 +88,73 @@ class CircleLayer :CAShapeLayer {
     
     func startAnimation() {
         self.moveUp(moveUpDist)
-        NSTimer.schedule(delay: upDuration) { timer in
+        Timer.schedule(delay: upDuration) { timer in
             self.spiner.animation()
         }
     }
-    func endAnimation(complition:(()->())? = nil) {
+    func endAnimation(_ complition:(()->())? = nil) {
         spiner.stopAnimation()
         self.moveDown(moveUpDist)
         didEndAnimation = complition
     }
     
-    func moveUp(distance: CGFloat) {
+    func moveUp(_ distance: CGFloat) {
         let move = CABasicAnimation(keyPath: "position")
         
-        move.fromValue = NSValue(CGPoint: position)
-        move.toValue = NSValue(CGPoint: CGPointMake(position.x, position.y - distance))
+        move.fromValue = NSValue(cgPoint: position)
+        move.toValue = NSValue(cgPoint: CGPoint(x: position.x, y: position.y - distance))
         
         move.duration = upDuration
         move.timingFunction = timeFunc
         
         move.fillMode = kCAFillModeForwards
-        move.removedOnCompletion = false
-        self.addAnimation(move, forKey: move.keyPath)
+        move.isRemovedOnCompletion = false
+        self.add(move, forKey: move.keyPath)
     }
     
     
-    func moveDown(distance: CGFloat) {
+    func moveDown(_ distance: CGFloat) {
         let move = CABasicAnimation(keyPath: "position")
         
-        move.fromValue = NSValue(CGPoint: CGPointMake(position.x, position.y - distance))
-        move.toValue = NSValue(CGPoint: position)
+        move.fromValue = NSValue(cgPoint: CGPoint(x: position.x, y: position.y - distance))
+        move.toValue = NSValue(cgPoint: position)
         
         move.duration = upDuration
         move.timingFunction = timeFunc
         
         move.fillMode = kCAFillModeForwards
-        move.removedOnCompletion = false
+        move.isRemovedOnCompletion = false
         move.delegate = self
-        self.addAnimation(move, forKey: move.keyPath)
+        self.add(move, forKey: move.keyPath)
     }
-    
-    override func animationDidStop(anim: CAAnimation, finished flag: Bool) {
+	
+		func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
         didEndAnimation?()
     }
 }
 
 
-class SpinerLayer :CAShapeLayer {
+class SpinerLayer :CAShapeLayer, CAAnimationDelegate {
     
-    init(superLayerFrame:CGRect, ballSize:CGFloat, color:UIColor = UIColor.whiteColor()) {
+    init(superLayerFrame:CGRect, ballSize:CGFloat, color:UIColor = UIColor.white) {
         super.init()
         
         let radius:CGFloat = (ballSize / 2) * 1.2//1.45
-        self.frame = CGRectMake(0, 0, superLayerFrame.height, superLayerFrame.height)
-        let center = CGPointMake(superLayerFrame.size.width / 2, superLayerFrame.origin.y + superLayerFrame.size.height/2)
+        self.frame = CGRect(x: 0, y: 0, width: superLayerFrame.height, height: superLayerFrame.height)
+        let center = CGPoint(x: superLayerFrame.size.width / 2, y: superLayerFrame.origin.y + superLayerFrame.size.height/2)
         let startAngle = 0 - M_PI_2
         let endAngle = (M_PI * 2 - M_PI_2) + M_PI / 8
         let clockwise: Bool = true
-        self.path = UIBezierPath(arcCenter: center, radius: radius, startAngle: CGFloat(startAngle), endAngle: CGFloat(endAngle), clockwise: clockwise).CGPath
+        self.path = UIBezierPath(arcCenter: center, radius: radius, startAngle: CGFloat(startAngle), endAngle: CGFloat(endAngle), clockwise: clockwise).cgPath
         
         self.fillColor = nil
-        self.strokeColor = color.colorWithAlphaComponent(1).CGColor
+        self.strokeColor = color.withAlphaComponent(1).cgColor
         self.lineWidth = 2
         self.lineCap = kCALineCapRound
         
         self.strokeStart = 0
         self.strokeEnd = 0
-        self.hidden = true
+        self.isHidden = true
         
     }
     
@@ -163,7 +163,7 @@ class SpinerLayer :CAShapeLayer {
     }
     
     func animation() {
-        self.hidden = false
+        self.isHidden = false
         let rotate = CABasicAnimation(keyPath: "transform.rotation.z")
         rotate.fromValue = 0
         rotate.toValue = M_PI * 2
@@ -171,8 +171,8 @@ class SpinerLayer :CAShapeLayer {
         rotate.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
         rotate.repeatCount = HUGE
         rotate.fillMode = kCAFillModeForwards
-        rotate.removedOnCompletion = false
-        self.addAnimation(rotate, forKey: rotate.keyPath)
+        rotate.isRemovedOnCompletion = false
+        self.add(rotate, forKey: rotate.keyPath)
 
         strokeEndAnimation()
     }
@@ -185,9 +185,9 @@ class SpinerLayer :CAShapeLayer {
         endPoint.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
         endPoint.repeatCount = 1
         endPoint.fillMode = kCAFillModeForwards
-        endPoint.removedOnCompletion = false
+        endPoint.isRemovedOnCompletion = false
         endPoint.delegate = self
-        self.addAnimation(endPoint, forKey: endPoint.keyPath)
+        self.add(endPoint, forKey: endPoint.keyPath)
     }
     
     func strokeStartAnimation() {
@@ -200,11 +200,11 @@ class SpinerLayer :CAShapeLayer {
 //        startPoint.fillMode = kCAFillModeForwards
 //        startPoint.removedOnCompletion = false
         startPoint.delegate = self
-        self.addAnimation(startPoint, forKey: startPoint.keyPath)
+        self.add(startPoint, forKey: startPoint.keyPath)
     }
 
-    override func animationDidStop(anim: CAAnimation, finished flag: Bool) {
-        if self.hidden == false {
+    func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
+        if self.isHidden == false {
             let a:CABasicAnimation = anim as! CABasicAnimation
             if a.keyPath == "strokeStart" {
                 strokeEndAnimation()
@@ -216,7 +216,7 @@ class SpinerLayer :CAShapeLayer {
     }
     
     func stopAnimation() {
-        self.hidden = true
+        self.isHidden = true
         self.removeAllAnimations()
     }
 }

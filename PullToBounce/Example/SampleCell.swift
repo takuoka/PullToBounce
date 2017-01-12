@@ -33,7 +33,7 @@ class SampleCell: UITableViewCell {
         
         let sepalator = UIView()
         sepalator.frame = CGRect(x: 0, y: 92 - 1, width: frame.width, height: 1)
-        sepalator.backgroundColor = UIColor.grayColor().colorWithAlphaComponent(0.2)
+        sepalator.backgroundColor = UIColor.gray.withAlphaComponent(0.2)
         self.addSubview(sepalator)
     }
 
@@ -42,7 +42,7 @@ class SampleCell: UITableViewCell {
         super.init(coder: aDecoder)
     }
     
-    func addLine(frame:CGRect) {
+    func addLine(_ frame:CGRect) {
         let line = UIView(frame:frame)
         line.layer.cornerRadius = frame.height / 2
         line.backgroundColor = color

@@ -223,9 +223,12 @@
 				TargetAttributes = {
 					B04C9E571B7B35FD002D55E7 = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = 29DN3FMVP9;
+						LastSwiftMigration = 0820;
 					};
 					B04C9E6C1B7B35FD002D55E7 = {
 						CreatedOnToolsVersion = 6.4;
+						LastSwiftMigration = 0820;
 						TestTargetID = B04C9E571B7B35FD002D55E7;
 					};
 				};
@@ -414,9 +417,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 29DN3FMVP9;
 				INFOPLIST_FILE = PullToBounce/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -424,9 +429,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 29DN3FMVP9;
 				INFOPLIST_FILE = PullToBounce/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -445,6 +452,7 @@
 				INFOPLIST_FILE = PullToBounceTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PullToBounce.app/PullToBounce";
 			};
 			name = Debug;
@@ -460,6 +468,7 @@
 				INFOPLIST_FILE = PullToBounceTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PullToBounce.app/PullToBounce";
 			};
 			name = Release;

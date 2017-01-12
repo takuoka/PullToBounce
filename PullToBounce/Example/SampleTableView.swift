@@ -14,24 +14,24 @@ class SampleTableView: UITableView, UITableViewDelegate, UITableViewDataSource {
         super.init(frame: frame, style: style)
         self.delegate = self
         self.dataSource = self
-        self.registerClass(SampleCell.self, forCellReuseIdentifier: "SampleCell")
-        self.separatorStyle = UITableViewCellSeparatorStyle.None
+        self.register(SampleCell.self, forCellReuseIdentifier: "SampleCell")
+        self.separatorStyle = UITableViewCellSeparatorStyle.none
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int  {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int  {
         return 30
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath:NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("SampleCell", forIndexPath: indexPath) as! SampleCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath:IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SampleCell", for: indexPath) as! SampleCell
         return cell
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 92
     }
 }
