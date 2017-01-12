@@ -10,7 +10,7 @@ import UIKit
 
 extension UIColor {
 
-    class var blue:UIColor {
+    class var customBlue:UIColor {
         get {
             return UIColor(red:0.421593, green: 0.657718, blue: 0.972549, alpha: 1)
         }
