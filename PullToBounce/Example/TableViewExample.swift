@@ -25,7 +25,7 @@ class TableViewExample: UIViewController {
         bodyView.addSubview(tableViewWrapper)
 
         tableViewWrapper.didPullToRefresh = {
-            Timer.schedule(delay: 2) { timer in
+            _ = Timer.schedule(delay: 2) { timer in
                 tableViewWrapper.stopLoadingAnimation()
             }
         }
