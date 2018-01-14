@@ -53,7 +53,7 @@ class BounceView: UIView {
         self.addSubview(waveView)
         
         waveView.didEndPull = {
-            Timer.schedule(delay: 0.2) { timer in
+            _ = Timer.schedule(delay: 0.2) { timer in
                 self.ballView.isHidden = false
                 self.ballView.startAnimation()
             }
