@@ -17,7 +17,7 @@ class BounceView: UIView {
         frame:CGRect,
         bounceDuration: CFTimeInterval = 0.8,
         ballSize:CGFloat = 28,//32,
-        ballMoveTimingFunc:CAMediaTimingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut),
+        ballMoveTimingFunc:CAMediaTimingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut),
         moveUpDuration:CFTimeInterval = 0.2,
         moveUpDist: CGFloat = 32 * 1.5,
         color: UIColor! = UIColor.white

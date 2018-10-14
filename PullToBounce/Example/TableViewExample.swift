@@ -18,7 +18,7 @@ class TableViewExample: UIViewController {
         bodyView.frame.y += 20 + 44
         self.view.addSubview(bodyView)
         
-        let tableView = SampleTableView(frame: self.view.frame, style: UITableViewStyle.plain)
+        let tableView = SampleTableView(frame: self.view.frame, style: UITableView.Style.plain)
 
         //🌟 Usage
         let tableViewWrapper = PullToBounceWrapper(scrollView: tableView)
