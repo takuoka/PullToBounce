@@ -15,7 +15,6 @@
 		B04C9E981B7B3761002D55E7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B04C9E921B7B3761002D55E7 /* LaunchScreen.xib */; };
 		B04C9E991B7B3761002D55E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B04C9E941B7B3761002D55E7 /* Main.storyboard */; };
 		B04C9E9A1B7B3761002D55E7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B04C9E961B7B3761002D55E7 /* Images.xcassets */; };
-		B04C9E9D1B7B377D002D55E7 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B04C9E9C1B7B377D002D55E7 /* Info.plist */; };
 		B04C9E9F1B7B3838002D55E7 /* TableViewExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04C9E9E1B7B3838002D55E7 /* TableViewExample.swift */; };
 		B04C9EA31B7B4D19002D55E7 /* SampleTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04C9EA21B7B4D19002D55E7 /* SampleTableView.swift */; };
 		B04C9EA51B7B50EB002D55E7 /* SampleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04C9EA41B7B50EB002D55E7 /* SampleCell.swift */; };
@@ -218,17 +217,17 @@
 			attributes = {
 				LastSwiftMigration = 0700;
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0640;
+				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = Uniface;
 				TargetAttributes = {
 					B04C9E571B7B35FD002D55E7 = {
 						CreatedOnToolsVersion = 6.4;
 						DevelopmentTeam = 29DN3FMVP9;
-						LastSwiftMigration = 0820;
+						LastSwiftMigration = 1000;
 					};
 					B04C9E6C1B7B35FD002D55E7 = {
 						CreatedOnToolsVersion = 6.4;
-						LastSwiftMigration = 0820;
+						LastSwiftMigration = 1000;
 						TestTargetID = B04C9E571B7B35FD002D55E7;
 					};
 				};
@@ -259,7 +258,6 @@
 			files = (
 				B04C9E9A1B7B3761002D55E7 /* Images.xcassets in Resources */,
 				B04C9E981B7B3761002D55E7 /* LaunchScreen.xib in Resources */,
-				B04C9E9D1B7B377D002D55E7 /* Info.plist in Resources */,
 				B04C9E991B7B3761002D55E7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -338,19 +336,30 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -383,13 +392,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -408,6 +427,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -420,8 +440,10 @@
 				DEVELOPMENT_TEAM = 29DN3FMVP9;
 				INFOPLIST_FILE = PullToBounce/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.twitter.tk-365.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -432,8 +454,10 @@
 				DEVELOPMENT_TEAM = 29DN3FMVP9;
 				INFOPLIST_FILE = PullToBounce/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.twitter.tk-365.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
@@ -451,8 +475,10 @@
 				);
 				INFOPLIST_FILE = PullToBounceTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.twitter.tk-365.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PullToBounce.app/PullToBounce";
 			};
 			name = Debug;
@@ -467,8 +493,10 @@
 				);
 				INFOPLIST_FILE = PullToBounceTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.twitter.tk-365.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PullToBounce.app/PullToBounce";
 			};
 			name = Release;

@@ -42,7 +42,7 @@ class WaveView: UIView, UIGestureRecognizerDelegate, CAAnimationDelegate {
     func boundAnimation(positionX: CGFloat,positionY: CGFloat) {
         self.waveLayer.path = self.wavePath(amountX: 0, amountY: 0)
         let bounce = CAKeyframeAnimation(keyPath: "path")
-        bounce.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn)
+        bounce.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeIn)
         let values = [
             self.wavePath(amountX: positionX, amountY: positionY),
             self.wavePath(amountX: -(positionX * 0.7), amountY: -(positionY * 0.7)),
@@ -54,7 +54,7 @@ class WaveView: UIView, UIGestureRecognizerDelegate, CAAnimationDelegate {
         bounce.values = values
         bounce.duration = bounceDuration
         bounce.isRemovedOnCompletion = true
-        bounce.fillMode = kCAFillModeForwards
+        bounce.fillMode = CAMediaTimingFillMode.forwards
         bounce.delegate = self
         self.waveLayer.add(bounce, forKey: "return")
     }

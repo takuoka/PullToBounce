@@ -10,12 +10,12 @@ import UIKit
 
 class SampleTableView: UITableView, UITableViewDelegate, UITableViewDataSource {
     
-    override init(frame: CGRect, style: UITableViewStyle) {
+    override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame, style: style)
         self.delegate = self
         self.dataSource = self
         self.register(SampleCell.self, forCellReuseIdentifier: "SampleCell")
-        self.separatorStyle = UITableViewCellSeparatorStyle.none
+        self.separatorStyle = UITableViewCell.SeparatorStyle.none
     }
     
     required init?(coder aDecoder: NSCoder) {
